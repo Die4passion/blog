@@ -3,7 +3,7 @@ layout: page
 title: 
 ---
 <br>
-### Live4art,Die4passion.
+### Live for art, Die for passion!
 一个php程序员。<br><br>
 懂一点：
 
@@ -30,12 +30,14 @@ title:
 More about me：
 <p>
 <a href="http://www.xiami.com/u/1305114"> 虾米 </a>
-&emsp;
+&emsp;&emsp;
 <a href="https://www.douban.com/people/witheredlove/"> 豆瓣 </a>
+&emsp;&emsp;
+<a href="https://github.com/Die4passion"> Github </a>
 
 
 
-<h3>作者 die4passion 在法律许可的范围内，抛弃此博客所享有之权利，并宣告将该博客所有内容贡献至公众领域。</h3> 
+<h3>博主 die4passion 在法律许可的范围内，抛弃此博客所享有之权利，并宣告将该博客所有内容贡献至公众领域。</h3> 
  
 
 
