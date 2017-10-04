@@ -33,13 +33,11 @@ More about me：
 &emsp;
 <a href="https://www.douban.com/people/witheredlove/"> 豆瓣 </a>
 
-<p>
 
 
-### 作者 die4passion 在法律许可的范围内，抛弃此博客所享有之权利，并宣告将该博客所有内容贡献至公众领域。
+<h3>作者 die4passion 在法律许可的范围内，抛弃此博客所享有之权利，并宣告将该博客所有内容贡献至公众领域。</h3> 
  
 
-<p> 
 
 <p> 
 
