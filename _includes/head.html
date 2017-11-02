@@ -4,8 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="keywords" content="Die4passion,个人博客,PHP,编程,{% if page.title %}{{ page.title | escape }}{% endif %}"/>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="author" content="leopardpan">
+  <meta name="author" content="Die4passion">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
@@ -24,7 +25,7 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
   
-  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  <meta name="google-site-verification" content="TSKKa7imnSsGrzYDNlb3lFzH-gI1uYUXxfv7VpzsrDw" />
 
 <!-- 站点统计 -->
   <script 
@@ -38,7 +39,7 @@
       (function() {
         var hm = document.createElement("script");
         hm.src = "//hm.baidu.com/hm.js?{{site.baidu.id}}";
-        var s = document.getElementsByTagName("script")[0]; 
+        var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
       })();
   </script>
