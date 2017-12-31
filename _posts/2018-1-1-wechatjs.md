@@ -157,13 +157,14 @@ wx.config({
 ```
 
 ##### JS-SDK使用权限签名signature算法(即上面config中的)
-	- 通过`appid`和`secret`获取`access_token`
-	- `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET`
-	- 生成`jsapi_ticket`
-	- 用第一步拿到的`access_token`采用http GET方式请求获得`jsapi_ticket`
-	- `https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=jsapi`
-	- 需要注意access_token 和jsapi_ticket有效期均为7200s，jsapi_ticket每天限制2000次请求，所以服务端必须进行缓存.
-	- 生成signature 签名需要的字段如下:
+
+- 通过`appid`和`secret`获取`access_token`
+- `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET`
+- 生成`jsapi_ticket`
+- 用第一步拿到的`access_token`采用http GET方式请求获得`jsapi_ticket`
+- `https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=jsapi`
+- 需要注意access_token 和jsapi_ticket有效期均为7200s，jsapi_ticket每天限制2000次请求，所以服务端必须进行缓存.
+- 生成signature 签名需要的字段如下:
 
 ```php
 $data = [
