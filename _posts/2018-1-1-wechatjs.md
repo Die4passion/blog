@@ -96,8 +96,9 @@ const SSLKEY_PATH = '../cert/apiclient_key.pem';
 ```
 
 ##### 页面js发起请求调起微信内支付
-	- 需要支付的页面引入js `http://res.wx.qq.com/open/js/jweixin-1.2.0.js`
-	- 页面js代码参考如下
+
+- 需要支付的页面引入js `http://res.wx.qq.com/open/js/jweixin-1.2.0.js`
+- 页面js代码参考如下
 
 ```javascript
 //js通过prepay调起支付
@@ -135,7 +136,8 @@ function callPay(data){
 ```
 
 ##### 微信文档中完全没有提到的
-	- 必须在js中写入一个`wx.config`,形如
+
+- 必须在js中写入一个`wx.config`,形如
 
 ```javascript
 wx.config({
