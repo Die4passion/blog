@@ -5,12 +5,12 @@ date: 2018-01-01
 tag: 工作笔记
 ---
 
-> 缘由,坑爹的官方文档
+#### 缘由,坑爹的官方文档
 
 之前一直觉得微信没什么意思,就一直没怎么去看,只会用easywechat现成的去做. 然而公司这个项目我想用easywechat确遇到了各种拓展的兼容性问题,因为项目的composer拓展和yii版本没有同步控制.故而在手动配置了很多扩展之后还是决定用微信官方的方法写一写,看上去也不难.结果写完才发现真的是巨坑无比.官方文档没有任何一个地方是清晰明了的,需要自己一步一个错解决之后才能慢慢做出来,里面的坑实在是太多.    故记下此篇,方面参考:
 
 
-> 小tips:
+#### 小tips:
 
 1. 可以将测试域名映射到本地,先在本地测试获取openid和prepay_id等,其他功能再去服务器测试,以加快开发效率.
 2. 需在发起支付请求方法之前页面获得openid,支付同时获取openid我暂时还不知如何处理
@@ -18,12 +18,13 @@ tag: 工作笔记
 4. 注意`timestamp timeStamp noncestr nonceStr` 两种写法混用的
 5. 所有获取签名或key均为参数按照字典顺序排序拼接说得字符串, php可先将所有参数存入数组`$data`中,用`sha1(urldecode(http_build_query($data)))`获得 
 
-> 开发步骤:
+#### 开发步骤:
 
 ### 获取openid
 
 1. 申请公众号
 	- 此处技术主管的号,略
+
 2. 微信公众号里相关配置
 	- wx公众平台->登录->找到->网页授权->修改回调域名为`www.xxxx.com`
 	- 我也记不清具体位置( ╯□╰ ),反正找到appid,secret,mch_id,写到你框架的配置文件,最好是构造方法检测必设置这些值
@@ -32,10 +33,12 @@ tag: 工作笔记
 	- 必须下载证书`MP_verify_xxxxxxxxxx.txt`到你项目入口文件同级目录
 	- 设置js接口安全域名(最多3个)
 	- 下载证书到项目目录,设置证书路径
+
 ```php
 const SSLCERT_PATH = '../cert/apiclient_cert.pem';
 const SSLKEY_PATH = '../cert/apiclient_key.pem';
 ```
+
 3. 获取openid
 	- 调用oauth 2.0授权获取code
 	- 根据返回code获取openid
@@ -45,7 +48,9 @@ const SSLKEY_PATH = '../cert/apiclient_key.pem';
 	- 得到openid 必须保存, 目前我用的有两种方式,一种是入库,一种是存入session
 		* 如果是后续还有公众号相关开发,建议入库
 		* 如果仅仅是支付功能,可考虑存入session,过期时间目前我用的框架默认
+
 4. 因为我只做支付功能,所以用的snsapi_base参数,不需要用户确认. 目前业务逻辑为,用户进入购买页面,如果判断用户为登录状态,则获取openid和本页完整url分别存入session. 这都是用户感受不到的.
+
 5. 获取openid之后,工作基本做了一半,下面的就是根据用户openid和公众号相关信息以及订单信息进行支付. 订单信息可自去看微信文档,必填参数写入即可. 
 
 ### jsspi支付
@@ -53,7 +58,8 @@ const SSLKEY_PATH = '../cert/apiclient_key.pem';
 1. 根据官方文档,和二维码支付网页跳转支付其他参数基本一样,我们只须填入上一步中得到用户对应此公众号的openid即可,另外如果之前使用其他账号支付,那么此处要单独配置appid和secret为此公众号的
 2. 参照官方文档传入需要的参数调起公共支付接口
 3. 返回得值再经过处理得到js支付需要的参数,prepay_id等
-2. 根据官方demo改写获取js支付需要的参数,代码如下
+4. 根据官方demo改写获取js支付需要的参数,代码如下
+
 ```php
     /**
      *
@@ -88,9 +94,11 @@ const SSLKEY_PATH = '../cert/apiclient_key.pem';
      * 3. 此方法关键为得到prepay_id, 待会需要prepay_id发起支付, 此处返回parameter格式中所有参数为发起支付时对应参数,如不需传入其他参数,js页面可直接将返回json值作为`WeixinJSBridge.invoke` 方法 `getBrandWCPayRequest`之后的参数,第二个参数的值.
      */
 ```
+
 3. 页面js发起请求调起微信内支付
 	- 需要支付的页面引入js `http://res.wx.qq.com/open/js/jweixin-1.2.0.js`
 	- 页面js代码参考如下
+
 ```javascript
 //js通过prepay调起支付
 function callPay(data){
@@ -125,8 +133,10 @@ function callPay(data){
  * 3. 注意此处的paySign为 以上参数字典排序生成的字符串+sha1算法生成
  */
 ```
-4. ***微信文档中完全没有提到的***
+
+4. 微信文档中完全没有提到的
 	- 必须在js中写入一个`wx.config`,形如
+
 ```javascript
 wx.config({
     appId: data.appId,
@@ -145,6 +155,7 @@ wx.config({
  * 4. jsApiList 参考微信官方文档,做完整公众号开发,用到的都必须写到这里
  */
 ```
+
 5. JS-SDK使用权限签名signature算法(即上面config中的)
 	- 通过`appid`和`secret`获取`access_token`
 	- `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET`
@@ -153,6 +164,7 @@ wx.config({
 	- `https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=jsapi`
 	- 需要注意access_token 和jsapi_ticket有效期均为7200s，jsapi_ticket每天限制2000次请求，所以服务端必须进行缓存.
 	- 生成signature 签名需要的字段如下:
+
 ```php
 $data = [
     'jsapi_ticket' => $this->getJsApiTicket(),
@@ -161,7 +173,9 @@ $data = [
     'url' => explode('#', Yii::$app->getRequest()->getAbsoluteUrl())[0]
     ];
 ```
+
 6. 调用支付的另一种js写法(应该结果是一样的,没仔细测)
+
 ```javascript
 wx.chooseWXPay({
     // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
