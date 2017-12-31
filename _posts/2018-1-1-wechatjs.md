@@ -95,7 +95,7 @@ const SSLKEY_PATH = '../cert/apiclient_key.pem';
      */
 ```
 
-3. 页面js发起请求调起微信内支付
+##### 页面js发起请求调起微信内支付
 	- 需要支付的页面引入js `http://res.wx.qq.com/open/js/jweixin-1.2.0.js`
 	- 页面js代码参考如下
 
@@ -134,7 +134,7 @@ function callPay(data){
  */
 ```
 
-4. 微信文档中完全没有提到的
+##### 微信文档中完全没有提到的
 	- 必须在js中写入一个`wx.config`,形如
 
 ```javascript
@@ -156,7 +156,7 @@ wx.config({
  */
 ```
 
-5. JS-SDK使用权限签名signature算法(即上面config中的)
+##### JS-SDK使用权限签名signature算法(即上面config中的)
 	- 通过`appid`和`secret`获取`access_token`
 	- `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET`
 	- 生成`jsapi_ticket`
@@ -174,7 +174,7 @@ $data = [
     ];
 ```
 
-6. 调用支付的另一种js写法(应该结果是一样的,没仔细测)
+##### 调用支付的另一种js写法(应该结果是一样的,没仔细测)
 
 ```javascript
 wx.chooseWXPay({
