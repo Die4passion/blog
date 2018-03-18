@@ -32,7 +32,7 @@ $(document).ready(function() {
   });  
 
   //核心价值观
-  var a_idx = 0;
+/*  var a_idx = 0;
   $("body").click(function(e) { 
       var a = new Array("哇哦!", "圣光会制裁你!", "我的魔法会把你撕成碎片!", "谢谢你!", "我要粉碎你!", "为了正义!", "你的灵魂将受到折磨!" ,"湮灭!", "爱国", "敬业", "诚信", "友善"); 
       var $i = $("<span/>").text(a[a_idx]); 
@@ -56,5 +56,5 @@ $(document).ready(function() {
       function() { 
           $i.remove(); 
       }); 
-  }); 
+  }); */
 });
