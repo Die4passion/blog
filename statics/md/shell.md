@@ -34,35 +34,40 @@
   [root@test ~]# whereis xxxxx|xargs rm -frv
   ```
 
-- ```bash
-  # pandoc 用来转换文件 支持格式 
-  
-  
+- `pandoc`
+
+```bash
+
+  # pandoc 用来转换文件 支持格式
+
   Input formats:  docbook, haddock, html, json, latex, markdown, markdown_github,
+
                   markdown_mmd, markdown_phpextra, markdown_strict, mediawiki,
                   native, opml, rst, textile
+
   Output formats: asciidoc, beamer, context, docbook, docx, dzslides, epub, epub3,
+
                   fb2, html, html5, json, latex, man, markdown, markdown_github,
                   markdown_mmd, markdown_phpextra, markdown_strict, mediawiki,
                   native, odt, opendocument, opml, org, pdf*, plain, revealjs,
                   rst, rtf, s5, slideous, slidy, texinfo, textile
                   [*for pdf output, use latex or beamer and -o FILENAME.pdf]
-  
-  
-  # 将rst文件转为md 并输出到新建文件 
-  pandoc -f 111.rst -o 111.md   
-  
-  # 将网页转为markdown
-  pandoc -s -r html http://www.gnu.org/software/make/ -o example12.text
-  
-  # 将 LaTeX 文档转换为 mathMathML.html：
-  pandoc math.tex -s --mathml  -o mathMathML.html
-  
-  # 置顶代码高亮主题
-  pandoc code.md -s --highlight-style monochrome -o example18c.html
-  ```
+  # 将rst文件转为md 并输出到新建文件
 
-- 
+  pandoc -f 111.rst -o 111.md   
+
+  # 将网页转为markdown
+
+  pandoc -s -r html http://www.gnu.org/software/make/ -o example12.text
+
+  # 将 LaTeX 文档转换为 mathMathML.html：
+
+  pandoc math.tex -s --mathml  -o mathMathML.html
+
+  # 置顶代码高亮主题
+
+  pandoc code.md -s --highlight-style monochrome -o example18c.html
+```
 
 
 

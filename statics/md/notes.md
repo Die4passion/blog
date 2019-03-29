@@ -398,3 +398,16 @@ compress
 > HAProxy
 > 
 > 硬件 BIG-IP 
+
+### Configuration Management 101
+
+> 自动部署工具
+
+| 名称        | 语言                  | 通信方式        | 配置文件格式              | 是否需要客户端 | 优点      | 缺点                |
+| --------- | ------------------- | ----------- | ------------------- | ------- | ------- | ----------------- |
+| SaltStack | python              | ZeroMQ 消息队列 | .sls (类似yml/docker) | 是       | 通信方式比较好 |                   |
+| Ansible   | python              | ssh(可切换0mq) | yml                 | 否       | 自带UI不错  | 执行效率不高,文档不清楚      |
+| Puppet    | ruby                | https       | .conf 类似nginx       | 是       | 多用于配置同步 | slave轮询master执行同步 |
+| chef      | chef  (ruby和erlang) | docker      |                     | 否       | 文档好像还不错 |                   |
+
+### Soft Skills 101

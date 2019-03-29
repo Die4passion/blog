@@ -1,40 +1,89 @@
 ## 备注:
 
-1. 所有奖金都是减掉平台提成之后算
+> 小目标 small_goal
 
-2. 每一级提取的奖金是减掉前10之后再算
+- 开始时间
 
-3. 参赛人数少于多少人的时候,只有前3有奖
+- 打卡开始时间
 
-4. 游戏    game_rule
+- 打卡结束时间
 
-          开始    每天进行多少场   每次时长(分钟)   参赛金额    平台提成      最少参赛人数(>3)           参赛人数临界值 (>10)      
+- 报名费
 
-   name desc stime     count               size             pay         draw              min_person           more_person             
 
-            H:i         7                60        默认10              10             20    
 
-5. 我的战绩 user_game_score
+> 玩家小目标记录
 
-id open_id game_id score 参赛时间  第几场   pay         yq_money   名次    场次id
-                                                5     0       
+- 小目标id
 
-4.每一级对应的奖金 app_game_win_level
+- 玩家open_id
 
-id game_id  level  gain   百分比
+- 第一次打卡时间戳
 
-               1    50      10
-               2    25      20
-               3    10      30
-               4    5       40
-               5    1       50s
+- 最后一次打卡时间戳
 
-5. 前10名对应的奖金  app_game_top_10
+- 成功次数
 
-    id game_id  rank   百分比   少于固定人数(只有前3有奖)
+- 失败次数
 
-                1                   50%
-                2                   30%
-                3                   20%                           
+- 累计投入金额
 
-app_game_rule     user_game_score   app_game_top_10     app_game_win_level       app_game_msatch
+- 累计获得奖金
+
+- 最早打卡时间 H:i:s
+
+- 最晚打卡时间 H:i:s
+
+- 最高获得奖金
+
+- 最低获得奖金
+
+- 持续打卡天数
+
+  
+
+
+
+> 每日小目标记录
+
+- 用户id
+
+- 参赛日期 Y-m-d
+
+- 打卡时间戳
+
+- 是否打卡
+
+- 排名
+
+- 获奖金额
+
+- 报名费
+
+- 钱到账时间戳
+
+ 
+
+> 小目标每日统计
+
+- 小目标id
+
+- 日期 y-m-d
+
+- 成功人数
+
+- 失败人数
+
+- 今日最早 (user.open_id)
+
+- 运气最佳 (user.open_id)
+
+- 坚持最久 (user.open_id)
+
+> 用户打卡其他
+
+- 设置提示
+
+- 是否有闹钟
+
+- 闹钟时间
