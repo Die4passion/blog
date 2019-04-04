@@ -138,8 +138,6 @@ uuid = universally unique identifier
 
 删除
 
-
-
 | 命令   | 删除的文本                |
 | ---- | -------------------- |
 | x    | 当前字符                 |

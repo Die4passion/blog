@@ -323,3 +323,19 @@ function assoc_unique($arr) {
     return $temp;
 }
 ```
+
+> 表情包接口
+
+```bash
+curl -X GET \
+  'https://pic.sogou.com/pics/json.jsp' \
+  -H 'Cookie: IPLOC=CN5101; SUV=00E65321ABD471BF5C8F41BF67D32411; JSESSIONID=aaaW4EHCX1rUV6QIMFMNw; ABTEST=1|1554350361|v1' \
+  -H 'Postman-Token: a981f141-4b3d-4ff1-b15b-c6b194905adb' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -F 'query=苏大强 表情' \
+  -F st=5 \
+  -F start=0 \
+  -F xml_len=24 \
+  -F reqFrom=wap_result
+```
