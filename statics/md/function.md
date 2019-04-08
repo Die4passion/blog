@@ -328,7 +328,7 @@ function assoc_unique($arr) {
 
 ```bash
 curl -X GET \
-  'https://pic.sogou.com/pics/json.jsp' \
+  'https://pic.sogou.com/pics/json.jsp?query=%E8%8B%8F%E5%A4%A7%E5%BC%BA%20%E8%A1%A8%E6%83%85&st=5&start=0&xml_len=24&reqFrom=wap_result' \
   -H 'Cookie: IPLOC=CN5101; SUV=00E65321ABD471BF5C8F41BF67D32411; JSESSIONID=aaaW4EHCX1rUV6QIMFMNw; ABTEST=1|1554350361|v1' \
   -H 'Postman-Token: a981f141-4b3d-4ff1-b15b-c6b194905adb' \
   -H 'cache-control: no-cache' \
@@ -337,5 +337,5 @@ curl -X GET \
   -F st=5 \
   -F start=0 \
   -F xml_len=24 \
-  -F reqFrom=wap_result
+  -F reqFrom=wap_result 
 ```
