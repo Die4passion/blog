@@ -24,13 +24,9 @@
 
 - [x] 定时任务1 调试  
 
-- [ ] 定时任务2
-      
-      
+- [x] 定时任务2
 
-- [ ] 测试
-
-
+- [x] 测试
 
 1. 报名
 
@@ -40,8 +36,6 @@
 
 - user_goal_count  `update`投入金额+=报名费
 
-
-
 2. 打卡
 
 - day_goal_record `update` 
@@ -49,10 +43,7 @@
   ```
   check_time 
   status 打卡 2
-  
   ```
-
-
 
 - user_goal_count `crear or update`
 
@@ -71,5 +62,3 @@
   pass_count
   status   ing 2
   ```
-
-

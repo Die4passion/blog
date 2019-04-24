@@ -159,11 +159,7 @@ file # 查看文件
 stat # 文件或文件夹详细信息
 ```
 
-
-
 > 一些有用的
-
-
 
 ```
 # 生成图标  github readme风格
@@ -171,9 +167,4 @@ https://shields.io
 
 # 快速生成图表js
 https://quickchart.io/
-
 ```
-
-
-
-
