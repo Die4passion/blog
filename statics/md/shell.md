@@ -121,6 +121,9 @@ $ tr -d '\r' < dosfile.txt > unixfile.txt
 $ sed -i 's/\r//' filename1 filename2 filename3 ...
 $ cat dosfile.txt | sed 's/^M//' > unixfile.txt
 $ sed -i 's/^M//' filename1 filename2 filename3 ...
+
+也可用tr
+$ tr -d '\r' < dos_file > unix_file
 ```
 
 > tldr   查看命令参数神器
@@ -128,3 +131,49 @@ $ sed -i 's/^M//' filename1 filename2 filename3 ...
 ```bash
 root:~# tldr -e    # 随机一个例子
 ```
+
+> rsync  文件同步
+> 
+> vim基本设置
+
+```bash
+root:~# vim ~/.vimrc
+
+set number
+
+syntax on
+
+set hlsearch
+
+set tabstop=4
+
+set autoindent
+```
+
+### bash shell
+
+文件放在 `~/bin ` 目录下
+
+```bash
+file # 查看文件
+stat # 文件或文件夹详细信息
+```
+
+
+
+> 一些有用的
+
+
+
+```
+# 生成图标  github readme风格
+https://shields.io
+
+# 快速生成图表js
+https://quickchart.io/
+
+```
+
+
+
+
