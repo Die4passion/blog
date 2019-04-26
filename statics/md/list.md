@@ -28,6 +28,10 @@
 
 - [x] 测试
 
+- [ ] 开始游戏: 
+
+- [ ] 参数: 截止时间  token(url和header)  record_id     
+
 1. 报名
 
 - 新增day_goal_record
