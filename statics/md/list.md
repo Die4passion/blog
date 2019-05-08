@@ -28,37 +28,29 @@
 
 - [x] 测试
 
-
-
 ---
 
 ### 比赛
 
-- [ ]  列表信息完善
+- [ ] 列表信息完善
 
-- [ ]  得分排名分钱
-
-
-
+- [ ] 得分排名分钱
 1. 报名
-
 - 新增day_goal_record
 
 - 新增day_goal_count 并 `update`(总报名人数+1,  状态未开始1
 
 - user_goal_count  `update`投入金额+=报名费
-
 2. 打卡
-
 - day_goal_record `update` 
-
+  
   ```
   check_time 
   status 打卡 2
   ```
 
 - user_goal_count `crear or update`
-
+  
   ```
   first_time
   last_time
@@ -69,12 +61,18 @@
   ```
 
 - day_goal_count `update`
-
+  
   ```
   pass_count
   status   ing 2
   ```
 
 
+
+1. 数据来源  scrapy + beautifulsoap
+
+2. 存储   mysql
+
+3. 前端  web+app 
 
 
