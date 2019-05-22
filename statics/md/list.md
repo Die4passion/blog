@@ -66,13 +66,15 @@
   pass_count
   status   ing 2
   ```
+1. 数据来源  `scrapy` + `beautifulsoap`
 
+2. 存储   `mysql`
 
+3. 前端  `web+app`
 
-1. 数据来源  scrapy + beautifulsoap
+4. `sendMsg`            type 3
 
-2. 存储   mysql
+5. `validationCode`
 
-3. 前端  web+app 
-
+6. `forgetPassword`
 

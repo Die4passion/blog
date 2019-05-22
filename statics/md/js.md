@@ -150,3 +150,20 @@ alert(user.name); // John
 - [arr.fill(value, start, end)](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)  — 从  `start`  到  `end`  用  `value`  重复填充数组。
 
 - [arr.copyWithin(target, start, end)](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin)  — copies its elements from position  `start`  till position  `end`  into  *itself*, at position  `target`  (overwrites existing).将其元素从  `start`  到  `end`  在  `target`  位置复制到  **本身**（覆盖现有）。
+
+- ``Array.from(obj[, mapFn, thisArg])` 将可迭代对象或类数组对象 `obj` 转化为真正的 `Array` 数组，然后我们就可以对它应用数组的方法。可选参数 `mapFn` 和 `thisArg` 允许我们对每个元素都应用一个函数。
+
+> **Map**
+
+[Map](https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Map) 是一个键值对的集合，很像 `Object`。但主要的区别是，`Map` 允许所有数据类型作为键。
+
+
+
+
+
+
+
+
+
+
+
