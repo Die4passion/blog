@@ -159,11 +159,92 @@ alert(user.name); // John
 
 
 
+###  DOM
 
 
 
+| Method                   | Searches by... | Can call on an element? | Live? |
+| ------------------------ | -------------- | ----------------------- | ----- |
+| `getElementById`         | `id`           | -                       | -     |
+| `getElementsByName`      | `name`         | -                       | ✔     |
+| `getElementsByTagName`   | tag or `'*'`   | ✔                       | ✔     |
+| `getElementsByClassName` | class          | ✔                       | ✔     |
+| `querySelector`          | CSS-selector   | ✔                       | -     |
+| `querySelectorAll`       | CSS-selector   | ✔                       | -     |
 
 
 
+>  attributes 的一些方法：
+
+- `elem.hasAttribute(name)` —— 检查是否存在这个特性
+- `elem.getAttribute(name)` —— 获取这个特性
+- `elem.setAttribute(name, value)` —— 把这个特性设置为 name 值
+- `elem.removeAttribute(name)` —— 移除这个特性
+- `elem.attributes` —— 所有特性的集合
 
 
+
+>  `classList` 方法：
+
+- `elem.classList.add/remove("class")` —— 添加/移除类。
+- `elem.classList.toggle("class")` —— 如果类存在就移除，否则添加。
+- `elem.classList.contains("class")` —— 返回 `true/false`，检查给定类。
+
+
+
+> 在管理 class 时，有两个 DOM 属性：
+
+- `className` —— 字符串值可以很好地管理整个类集合。
+- `classList` —— 拥有 `add/remove/toggle/contains` 方法的对象可以很好地支持单独的类。
+
+>  改变样式：
+
+- `style` 属性是一个带有 camelCased 样式的对象。对它的读取和修改 `"style"` 属性中的单个属性等价。要留意如果应用 `important` 和其他稀有内容 —— 在 [MDN](https://developer.mozilla.org/zh/docs/Web/API/CSSStyleDeclaration) 上有一个方法列表。
+- `style.cssText` 属性对应于整个“样式”属性，即完整的样式字符串。
+
+ 获取已经解析的样式（对应于所有类，在应用所有 CSS 并计算最终值后）：
+
+- `getComputedStyle(elem[, pseudo])` 返回与 `style` 对象类似且包含了所有类的对象，是只读的。
+
+>  滚动：
+
+- 读取当前的滚动：`window.pageYOffset/pageXOffset`
+- 改变当前的滚动：
+  - `window.scrollTo(pageX,pageY)` — 绝对定位
+  - `window.scrollBy(x,y)` — 相对当前位置的滚动
+  - `elem.scrollIntoView(top)` — 滚动到正好`elem`可视的位置（`elem` 与窗口的顶部/底部对齐）
+
+###  事件
+
+这里有一张最有用的 DOM 事件列表，请看：
+
+**鼠标事件：**
+
+- `click` —— 当鼠标点击一个元素时（触摸屏设备在 tap 时生成）。
+- `contextmenu` —— 当鼠标右击一个元素时。
+- `mouseover` / `mouseout` —— 当鼠标光标移入或移出一个元素时。
+- `mousedown` / `mouseup` —— 当鼠标按下/释放一个元素时。
+- `mousemove` —— 当鼠标移出时。
+
+**表单元素事件**：
+
+- `submit` —— 当访问者提交了一个 `<form>` 时。
+- `focus` —— 当访问者聚焦一个元素时，例如 `<input>`。
+
+**键盘事件**：
+
+- `keydown` and `keyup` —— 当访问者按下然后松开按钮时。
+
+**Document 事件**：
+
+- `DOMContentLoaded` —— 当加载和处理 HTML 时，DOM 将会被完整地构建。
+
+**CSS 事件**：
+
+- `transitionend` —— 当 CSS 动画完成时。
+
+>  有 3 种方法可以分发事件处理器：
+
+1. HTML 属性：`onclick="..."`。
+2. DOM 属性 `elem.onclick = function`。
+3. 方法：添加 `elem.addEventListener(event, handler[, phase])`，移除 `removeEventListener`。

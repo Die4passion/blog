@@ -26,6 +26,10 @@
 
 - `awk '{ x += $3 } END { print x }'` 第三列之和 
 
+- `ls -v | cat -n | while read n f; do ((n--)); mv -i -- $f banner_0$n.jpg; done` 批量重命名文件
+
+- `a=1;for i in *.jpg; do new=$(printf "banner_0%d.jpg" "$a"); mv -i -- $i $new; ((a++)); done` 也是批量重命名文件
+
 - `iconv` 文本文件转码
 
 - ```bash
