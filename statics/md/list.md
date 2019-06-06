@@ -78,3 +78,31 @@
 
 6. `forgetPassword`
 
+
+
+流程图 工具:
+
+- draw.io
+- 在线 [zenflow](https://www.zenflowchart.com/documents) 
+- [code2flow](https://code2flow.com/)
+
+
+
+> **`redis`使用**
+
+
+
+- game表 全部存`redis`, 更新时
+
+- 生成`game_match`的时候, 全部缓存到`redis`
+
+
+
+- `ads`表存`redis`,  ads更新的时候更新
+- `user_game_record` 已完结`(status>1)`的时候
+- 订单相关
+- 战绩昨天的放redis
+- 小红点信息 
+- 小目标
+  - 今日活动完成情况
+  - 
