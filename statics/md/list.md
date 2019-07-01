@@ -104,8 +104,8 @@ done
 
 `todo`
 
-- 优化之前的redis写入读取过程
-- 其他需要加入redis的加入redis
+- ads表加 redis
+- user表加 redis ?
 - 将redis定时同步到mysql, 并删掉无用redis
 
 
@@ -136,8 +136,6 @@ done
   - `alias book='cd ~/projects/books/time/chapters'`
   - `alias inva='cd ~/projects/inventory/groupa ; export INVSTYLE=A'`
   - `alias rank='cd /home/rank/data && date >>.log'`
-
-
 
 ### git flow
 
@@ -239,3 +237,12 @@ done
 - 一次性多取数据, 而不是分批次取
 - 数据对齐访问
 - 将浮点数定点化
+
+
+
+> hash 算法属性
+
+1. 不可逆
+2. 可复现
+3. 不重复
+4. 不可预见性
