@@ -6,7 +6,7 @@ And as all hopes are shattered, the last of passions scattered, the gale of bitt
 
 #### 比较好的方法
 
-```
+```php
 /** *利用google api生成二维码图片
  * $content：二维码内容参数
  * $size：生成二维码的尺寸，宽度和高度的值
