@@ -1,29 +1,38 @@
 > 有用的技巧
 
 - `!$`  上一个命令的最后一个字符串
+
 - `sudo !!` 以管理员身份执行上一个命令
+
 - `pstree -p` 显示进程树
+
 - `date -d@时间戳` 时间戳转时间
+
 - `mtr xxxxx.com` 测试网络连接
+
 - `echo "ls -l" | at midnight`  在某个时间运行某个命令
+
 - `ps aux | sort -nk +4 | tail`  列出头十个最耗内存的进程
+
 - `ascii` 查看ascii码表
+
 - **`netstat –tlnp`** 列出本机进程监听的端口号
+
 - **`lsof –i`** 实时查看本机网络服务的活动状态。
+
 - **`python -m SimpleHTTPServer`** 一句话实现http服务
+
 - 使用 nohup 或  disown 如果你要让某个进程运行在后台。
+
 - `awk '{ x += $3 } END { print x }'` 第三列之和 
+
 - `ls -v | cat -n | while read n f; do ((n--)); mv -i -- $f banner_0$n.jpg; done` 批量重命名文件
+
 - `a=1;for i in *.jpg; do new=$(printf "banner_0%d.jpg" "$a"); mv -i -- $i $new; ((a++)); done` 也是批量重命名文件
+
 - `iconv` 文本文件转码
 
-
-
 - `-z "${var}" ` 空字符串  `-n "${var}"` 非空字符串
-
-
-
-
 
 - ```bash
   # 彻底删除 xxxxx  rpm系统
