@@ -1,2 +1,1 @@
-git fetch orgin master
 bundle exec jekyll build
