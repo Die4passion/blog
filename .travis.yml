@@ -33,5 +33,5 @@ before_install:
   -in travis_ssh_key.enc -out travis_ssh_key -d
 
 after_success:
- - ssh -i ~/.ssh/deploy_ecdsa jekyll@47.74.135.220 "mkdir /home/jekyll/_content/"
- - scp -i ~/.ssh/deploy_ecdsa -r _site/* jekyll@47.74.135.220:/home/jekyll/_content/
+ - ssh -i ~/.ssh/deploy_ecdsa jekyll@107.167.176.182 "mkdir /home/jekyll/_content/"
+ - scp -i ~/.ssh/deploy_ecdsa -r _site/* jekyll@107.167.176.182:/home/jekyll/_content/
