@@ -2,6 +2,7 @@ require "rubygems"
 require 'rake'
 require 'yaml'
 require 'time'
+require 'html-proofer'
 
 SOURCE = "."
 CONFIG = {
@@ -12,6 +13,12 @@ CONFIG = {
   'post_ext' => "md",
   'theme_package_version' => "0.1.0"
 }
+
+task :test do
+  sh "bundle exec jekyll build"
+	options = { :assume_extension => true }
+	HTMLProofer.check_directory("./_site", options).run
+end
 
 # Path configuration helper
 module JB
@@ -36,7 +43,7 @@ module JB
       path.compact!
       File.__send__ :join, path
     end
-  
+ 
   end #Path
 end #JB
 
