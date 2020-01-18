@@ -32,6 +32,8 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_70235cfcdc01_key -iv $encrypted_70235cfcdc01_iv
   -in travis_ssh_key.enc -out travis_ssh_key -d
 
-#after_success:
-# - ssh -i ~/.ssh/deploy_ecdsa jekyll@47.74.135.220 "mkdir /home/jekyll/_content/"
-# - scp -i ~/.ssh/deploy_ecdsa -r _site/* jekyll@47.74.135.220:/home/jekyll/_content/
+after_success:
+# - ssh -i ~/.ssh/deploy_ecdsa -p 2202 root@47.74.135.220 "mkdir /home/jekyll/_content/"
+# - scp -i ~/.ssh/deploy_ecdsa -r -P 2202 _site/* root@47.74.135.220:/home/jekyll/_content/
+ - rsync -r --delete-after --quiet 'ssh -i ~/.ssh/deploy_ecdsa -p 2202' $TRAVIS_BUILD_DIR/_site root@47.74.135.220:/var/www/html/blog/_site
+
