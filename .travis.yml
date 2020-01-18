@@ -35,4 +35,4 @@ before_install:
 after_success:
 # - ssh -i ~/.ssh/deploy_ecdsa -p 2202 root@47.74.135.220 "mkdir /home/jekyll/_content/"
 # - scp -i ~/.ssh/deploy_ecdsa -r -P 2202 _site/* root@47.74.135.220:/home/jekyll/_content/
- - rsync -rv -delete -e 'ssh -o stricthostkeychecking=no -i ~/.ssh/travis_ssh_key -p 2202' $TRAVIS_BUILD_DIR/_site blog@47.74.135.220:/var/www/html/blog/_site
+ - rsync -rv -delete -e 'ssh -o stricthostkeychecking=no -i $HOME/.ssh/travis_ssh_key -p 2202' $TRAVIS_BUILD_DIR/_site blog@47.74.135.220:/var/www/html/blog/_site
