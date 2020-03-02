@@ -136,5 +136,5 @@ ENV VERSION=1.0 DEBUG=on \
 > else
 
 ```
-# Ctrl-p 或Ctrl-q 推出一个实例而不终止
+# Ctrl-p 或Ctrl-q 推出一个实例而不终止 
 ```

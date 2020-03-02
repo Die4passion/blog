@@ -12,8 +12,6 @@ sequenceDiagram
  Bob-->John: Jolly good!
 ```
 
-
-
 ```flow
 st=>start: Start|past:>http://www.google.com[blank]
 e=>end: End|future:>http://www.google.com
@@ -31,12 +29,8 @@ para(path2, top)->op1
 st@>op1({"stroke":"#777"})@>cond({"stroke": "Pink", "arrow-end":"classic-wide-long"})
 ```
 
-
-
-
 ```sequence
-
-    Title: little try
+Title: little try
     participant user 
     participant validation as v
     participant controller as c
@@ -54,5 +48,3 @@ st@>op1({"stroke":"#777"})@>cond({"stroke": "Pink", "arrow-end":"classic-wide-lo
     v-->>user: return home
     v-->>user: return login scene
 ```
-
-
